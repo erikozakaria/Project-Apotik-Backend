@@ -6,7 +6,7 @@ exports.insert = (data) =>
     new Promise((resolve, reject)  => {
         try {
             orderModel.create(data)
-            .then(() => resolve(requestResponse.sukses('Berhasil Memproses Transaksi')))
+            .then(() => resolve(requestResponse.sukses('Transaksi Kita Proses')))
             .catch(() => reject(requestResponse.serverError))
         } catch (error) {
             console.log(error)
@@ -65,7 +65,7 @@ exports.konfirmasiOrder = (id) =>
         },
         {
             status: 2
-        }).then(() => resolve(requestResponse.sukses('Berhasil Konfirmasi Order')))
+        }).then(() => resolve(requestResponse.sukses('Order Sudah Di Konfirmasi')))
         .catch(() => reject(requestResponse.serverError))
     })
 
@@ -76,6 +76,6 @@ exports.konfirmasiOrder = (id) =>
         },
         {
             status: 3
-        }).then(() => resolve(requestResponse.sukses('Berhasil Menerima Barang')))
+        }).then(() => resolve(requestResponse.sukses('Obat Sudah Di Terima')))
         .catch(() => reject(requestResponse.serverError))
     })

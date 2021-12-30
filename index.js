@@ -12,9 +12,9 @@ mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log('Berhasil Connect Bro')
+    console.log('Alhamdulilah Kita Berhasil Connect')
 }).catch(() => {
-    console.log('Waduh Gagal Bro')
+    console.log('Astaga Kita Gagal Nih')
 })
 
 const directory = path.join(__dirname, '/statics/')
@@ -37,5 +37,5 @@ app.use('/obat', require('./routes/Obat'))
 app.use('/order', require('./routes/Order'))
 
 app.listen(5000, () => {
-    console.log('Server Berhasil Jalan Bre')
+    console.log('Server Nya Udah Jalan Nih')
 })

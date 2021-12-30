@@ -5,7 +5,7 @@ const { deleteImage } = require('../uploadConfig')
 exports.insertObat = (data) =>
     new Promise((resolve, reject) => {
         obatModel.create(data)
-        .then(() => resolve(requestResponse.sukses('Berhasil Input Obat')))
+        .then(() => resolve(requestResponse.sukses('Obat Nya Sudah Terinput')))
         .catch(() => reject(requestResponse.serverError))
     })
 
@@ -33,7 +33,7 @@ exports.edit = (data, id, changeImage) =>
             if (changeImage) {
                 deleteImage(data.oldImage)
             }
-            resolve(requestResponse.sukses('Berhasil Edit Obat'))
+            resolve(requestResponse.sukses('Obat Sudah Di Edit'))
         }).catch(() => reject(requestResponse.serverError))
     })
 
@@ -46,7 +46,7 @@ exports.delete = (id) =>
                 _id: objectId(id)
             }).then(() => {
                 deleteImage(obat.image)
-                resolve(requestResponse.sukses('Berhasil Delete Obat'))
+                resolve(requestResponse.sukses('Obat Sudah Di Delete'))
             }).catch(() => reject(requestResponse.serverError))
         })
     })
